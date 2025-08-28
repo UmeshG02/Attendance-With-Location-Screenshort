@@ -1,0 +1,12 @@
+{
+  "name": "User",
+  "properties": {
+    "attendance_criteria": {
+      "default": 75,
+      "description": "The minimum attendance percentage required.",
+      "type": "number"
+    }
+  },
+  "required": [],
+  "type": "object"
+}
