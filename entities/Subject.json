@@ -1,0 +1,26 @@
+{
+  "name": "Subject",
+  "properties": {
+    "color": {
+      "description": "A hex color code for the subject",
+      "type": "string"
+    },
+    "name": {
+      "description": "Name of the subject",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "color"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  },
+  "type": "object"
+}
