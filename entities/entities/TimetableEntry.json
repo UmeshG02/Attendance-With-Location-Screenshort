@@ -1,0 +1,45 @@
+{
+  "name": "TimetableEntry",
+  "properties": {
+    "dayOfWeek": {
+      "description": "Day of the week",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "type": "string"
+    },
+    "endTime": {
+      "description": "End time of the class, e.g., '10:00'",
+      "type": "string"
+    },
+    "startTime": {
+      "description": "Start time of the class, e.g., '09:00'",
+      "type": "string"
+    },
+    "subjectId": {
+      "description": "ID of the subject from the Subject entity",
+      "type": "string"
+    }
+  },
+  "required": [
+    "dayOfWeek",
+    "subjectId",
+    "startTime",
+    "endTime"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  },
+  "type": "object"
+}
