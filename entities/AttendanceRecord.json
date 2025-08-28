@@ -1,0 +1,51 @@
+{
+  "name": "AttendanceRecord",
+  "properties": {
+    "date": {
+      "format": "date",
+      "type": "string"
+    },
+    "latitude": {
+      "type": "number"
+    },
+    "location_accuracy": {
+      "type": "number"
+    },
+    "longitude": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "present",
+        "absent",
+        "cancelled"
+      ],
+      "type": "string"
+    },
+    "subjectId": {
+      "type": "string"
+    },
+    "timestamp": {
+      "format": "date-time",
+      "type": "string"
+    }
+  },
+  "required": [
+    "date",
+    "status",
+    "timestamp",
+    "subjectId"
+  ],
+  "rls": {
+    "read": {
+      "created_by": "{{user.email}}"
+    },
+    "write": {
+      "created_by": "{{user.email}}"
+    }
+  },
+  "type": "object"
+}
